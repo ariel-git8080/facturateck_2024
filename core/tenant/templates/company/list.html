@@ -1,0 +1,38 @@
+{% extends 'list.html' %}
+{% load static %}
+{% block assets_list %}
+    <script src="{% static 'company/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <th>Id</th>
+    <th>Razón social</th>
+    <th>Nombre Comercial</th>
+    <th>Número de RUC</th>
+    <th>Teléfono</th>
+    <th>Esquema</th>
+    <th>Plan</th>
+    <th class="text-center">Opciones</th>
+{% endblock %}
+
+{% block javascript_list %}
+    <div class="modal fade" id="myModalResult" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold">
+                        <i class="fas fa-folder-open"></i> Resultados de la instalación
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="p-0 text-center font-weight-bold" id="title"></h4>
+                    <hr>
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
